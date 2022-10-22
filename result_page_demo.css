@@ -41,8 +41,18 @@ h3{
     margin-bottom: -2%;
 }
 
-	
-.main_pic {
+
+.main_pic_circle{
+    position:absolute;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.main_pic_aniaml {
+
     object-fit: scale-down;
     /* overflow: hidden; */
     width: 100%;
@@ -59,7 +69,7 @@ h3{
     /*-------change color--------*/
 
     /*default : black*/
-
+    filter: invert(0%) sepia(95%) saturate(20%) hue-rotate(223deg) brightness(86%) contrast(101%);
     /*change to red*/
     /* filter: invert(39%) sepia(89%) saturate(1165%) hue-rotate(340deg) brightness(84%) contrast(105%); */
 
@@ -74,7 +84,7 @@ h3{
   }
 
 .parents{
-    margin-top: -7%;
+    margin-top: -5%;
     color: #3a4ca8;
     -webkit-text-stroke: 0.7px #3a4ca8;
     position: relative;
