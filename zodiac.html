@@ -60,8 +60,8 @@
 
             // Calculate animal and color
             //// initializing
-            const animalList = ["Sheep", "Monkey", "Chicken", "Dog", "Pig", "Mouse",  "Cow", "Tiger", "Rabbit", "Dragon", "Snake", "Horse"];
-            const colorList = ["White","White", "Black","Black", "Blue","Blue", "Red","Red", "Gold", "Gold"];
+            const animalList = ["Sheep", "Monkey", "Rooster", "Dog", "Pig", "Rat",  "Cow", "Tiger", "Rabbit", "Dragon", "Snake", "Horse"];
+            const colorList = ["White","White", "Black","Black", "Blue","Blue", "Red","Red", "Yellow", "Yellow"];
             var year_value = parseInt($('#input').val());
 
             const animal_idx =(year_value+1)%12;
@@ -71,7 +71,7 @@
             //// animal and color by itself
             var animal = animalList[animal_idx];
             var color =  colorList[color_idx];
-            console.log(`${animal}, ${color}`);
+            // console.log(`${animal}, ${color}`);
 
             //// best animal and best color
             var bestAnimal = animalList[11 - animal_idx];

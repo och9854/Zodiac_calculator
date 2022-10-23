@@ -12,8 +12,8 @@
         <h2>YELLOW COW</h2>
 
         <div class = 'parents'>
-            <div class = main_pic_circle> <img  src="zodiac_pic_noback/backcircle.png" width = '800'>  </div>
-            <div class = main_pic_aniaml> <img  src="zodiac_pic_noback/cow.png" width = '800'>  </div>
+            <div class = main_pic_circle> <img src="zodiac_pic_noback/backcircle.png" width = '800'>  </div>
+            <div class = main_pic_aniaml> <img id = "main_pic_aniaml" src="zodiac_pic_noback/cow.png" width = '800'>  </div>
             
             <div class = "color_explain">
                 <h3>
@@ -47,7 +47,7 @@
                 Black Horse
                 <br>
                 <div class = sub_img_circle_1> <img src="zodiac_pic_noback/backcircle.png" width = '300'> </div>
-                <div class = sub_img_aniaml_best> <img  src="zodiac_pic_noback/horse.png" width = '300'>  </div>
+                <div class = sub_img_aniaml_best> <img  id = "sub_pic_aniaml_best" src="zodiac_pic_noback/horse.png" width = '300'>  </div>
             </div>
 
             <div class = worst>
@@ -58,12 +58,82 @@
                 Blue Snake
                 <br>
                 <div class = sub_img_circle_2> <img src="zodiac_pic_noback/backcircle.png" width = '300'> </div>
-                <div class = sub_img_aniaml_worst> <img  src="zodiac_pic_noback/snake.png" width = '300'>  </div>
+                <div class = sub_img_aniaml_worst> <img id = 'sub_pic_aniaml_worst' src="zodiac_pic_noback/snake.png" width = '300'>  </div>
             </div>
             
         <script>
-            // the javascript array resultArray is now in Page 2 as const [animal, color, bestAnimal, bestColor, worstAnimal, worstColor];
-            resultArray = JSON.parse(sessionStorage.getItem("resultArray"));
+                // the javascript array resultArray is now in Page 2 as const [animal, color, bestAnimal, bestColor, worstAnimal, worstColor];
+                resultArray = JSON.parse(sessionStorage.getItem("resultArray"));
+
+                var resultArray = ["Snake", "Yellow", "Monkey", "Black", "Cow", "Blue"];
+                document.write(resultArray[0]);
+
+            function AnimalPic(pic_id, animal){
+
+                if(animal == "Cow"){
+                    document.getElementById(pic_id).src="zodiac_pic_noback/cow.png";
+                }
+                else if(animal == "Tiger"){
+                    document.getElementById(pic_id).src="zodiac_pic_noback/tiger.png";
+                }
+
+                else if(animal == "Rabbit"){
+                    document.getElementById(pic_id).src="zodiac_pic_noback/rabbit.png";
+                }
+
+                else if(animal == "Dragon"){
+                    document.getElementById(pic_id).src="zodiac_pic_noback/dragon.png";
+                }
+
+                else if(animal == "Snake"){
+                    document.getElementById(pic_id).src="zodiac_pic_noback/snake.png";
+                }
+
+                else if(animal == "Horse"){
+                    document.getElementById(pic_id).src="zodiac_pic_noback/horse.png";
+                }
+
+                else if(animal == "Sheep"){
+                    document.getElementById(pic_id).src="zodiac_pic_noback/sheep.png";
+                }
+
+                else if(animal == "Monkey"){
+                    document.getElementById(pic_id).src="zodiac_pic_noback/monkey.png";
+                }
+
+                else if(animal == "Rooster"){
+                    document.getElementById(pic_id).src="zodiac_pic_noback/rooster.png";
+                }
+
+                else if(animal == "Dog"){
+                    document.getElementById(pic_id).src="zodiac_pic_noback/dog.png";
+                }
+
+                else if(animal == "Pig"){
+                    document.getElementById(pic_id).src="zodiac_pic_noback/pig.png";
+                }
+
+                else if(animal == "Rat"){
+                    document.getElementById(pic_id).src="zodiac_pic_noback/rat.png";
+                }
+            }
+            
+            /*change main animal pic*/
+            AnimalPic("main_pic_aniaml",resultArray[0])
+
+            /*change sub best animal pic*/
+            AnimalPic("sub_pic_aniaml_best",resultArray[2])
+            
+            /*change sub worst animal pic*/
+            AnimalPic("sub_pic_aniaml_worst",resultArray[4])
+
+            /*change the color*/
+
+
+            
+
+
+
 
         </script>
     </body>
