@@ -9,7 +9,7 @@
 
     <body>
         <h1>My ZODIAC is . . .</h1>
-        <h2>YELLOW COW</h2>
+        <h2 id = "main_name">YELLOW COW</h2>
 
         <div class = 'parents'>
             <div class = main_pic_circle> <img src="zodiac_pic_noback/backcircle.png" width = '800'>  </div>
@@ -17,7 +17,7 @@
             
             <div class = "color_explain">
                 <h3>
-                    <strong> Traits of Yellow </strong>
+                    <div id = 'trait_color'>Traits of Yellow</div>
                 </h3>
                 <br>
                 yellowyellowyellowyellowyellowy ellowyellowyellow
@@ -29,11 +29,11 @@
         
             <div class = "zodiac_explain"> 
                 <h3>
-                    <strong> Traits of Cow </strong>
+                    <div id = "trait_animal">Traits of Cow</div>
                 </h3>
                 <br>
                 CowCowCowCowCowCowCowCowCowCow CowCowCowCowCowCowCow
-                CowCowCowCowCowCowCowCowCowCowCowCowC owCowCowCowCow
+                CowCowCowCowCowCowCowCowCowCow CowCowCowCowCowCowCow
                 CowCowCowCowCowCowCowCowCowCow CowCowCowCowCowCowCow
                 CowCowCowCowCowCowCowCowCowCow CowCowCowCowCowCowCow
             </div>
@@ -44,7 +44,7 @@
                     <strong> Your Bestie </strong>
                 </h3>
                 <br>
-                Black Horse
+                <div id = 'bestie_name'>Yellow Cow</div>
                 <br>
                 <div class = sub_img_circle_1> <img src="zodiac_pic_noback/backcircle.png" width = '300'> </div>
                 <div class = sub_img_aniaml_best> <img  id = "sub_pic_aniaml_best" src="zodiac_pic_noback/horse.png" width = '300'>  </div>
@@ -55,7 +55,7 @@
                     <strong> Be Careful...! </strong>
                 </h3>
                 <br>
-                Blue Snake
+                <div id = 'worst_name'>Yellow Cow</div>
                 <br>
                 <div class = sub_img_circle_2> <img src="zodiac_pic_noback/backcircle.png" width = '300'> </div>
                 <div class = sub_img_aniaml_worst> <img id = 'sub_pic_aniaml_worst' src="zodiac_pic_noback/snake.png" width = '300'>  </div>
@@ -65,7 +65,7 @@
             // the javascript array resultArray is now in Page 2 as const [animal, color, bestAnimal, bestColor, worstAnimal, worstColor];
             resultArray = JSON.parse(sessionStorage.getItem("resultArray"));
 
-            var resultArray = ["Snake", "Yellow", "Monkey", "Black", "Cow", "Blue"];
+            var resultArray = ["Tiger", "White", "Hores", "Red", "Rat", "Red"];
             // document.write(resultArray[0]);
 
             function AnimalPic(pic_id, animal){
@@ -127,12 +127,22 @@
             /*change sub worst animal pic*/
             AnimalPic("sub_pic_aniaml_worst",resultArray[4])
 
-            /*change the color*/
+            /*change the main name*/
+            document.getElementById('main_name').innerHTML = resultArray[1] + ' ' + resultArray[0];
 
+            /*change the bestie name*/
+            document.getElementById('bestie_name').innerHTML = resultArray[3] + ' ' + resultArray[2];
 
+            /*change the worst name*/
+            document.getElementById('worst_name').innerHTML = resultArray[5] + ' ' + resultArray[4];
             
+            /*Traits of Animal*/
+            document.getElementById('trait_animal').innerHTML = "Traits of " + resultArray[0];
 
+            /*Traits of color*/
+            document.getElementById('trait_color').innerHTML = "Traits of " + resultArray[1];
 
+           
 
 
         </script>
