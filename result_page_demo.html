@@ -60,18 +60,27 @@
                 <div class = sub_img_circle_2> <img src="zodiac_pic_noback/backcircle.png" width = '300'> </div>
                 <div class = sub_img_aniaml_worst> <img id = 'sub_pic_aniaml_worst' src="zodiac_pic_noback/snake.png" width = '300'>  </div>
             </div>
-            
+        
+
+        <!-- for jquery -->
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous">
+        </script>
+
         <script>
             // the javascript array resultArray is now in Page 2 as const [animal, color, bestAnimal, bestColor, worstAnimal, worstColor];
             resultArray = JSON.parse(sessionStorage.getItem("resultArray"));
 
-            var resultArray = ["Tiger", "White", "Hores", "Red", "Rat", "Red"];
+            // var resultArray = ["Snake", "Red", "Horse", "Red", "Rabbit", "White"];
             // document.write(resultArray[0]);
 
             function AnimalPic(pic_id, animal){
 
                 if(animal == "Cow"){
                     document.getElementById(pic_id).src="zodiac_pic_noback/cow.png";
+                
                 }
                 else if(animal == "Tiger"){
                     document.getElementById(pic_id).src="zodiac_pic_noback/tiger.png";
@@ -117,6 +126,24 @@
                     document.getElementById(pic_id).src="zodiac_pic_noback/rat.png";
                 }
             }
+                /*For color filter*/
+            function ColorFliter(pic_id, color){
+                if(color == "White"){
+                $(pic_id).css('filter', 'invert(81%) sepia(0%) saturate(35%) hue-rotate(231deg) brightness(98%) contrast(90%)')
+                }
+                if(color == "Black"){
+                $(pic_id).css('filter', 'invert(0%) sepia(95%) saturate(20%) hue-rotate(223deg) brightness(86%) contrast(101%)')
+                }
+                if(color == "Blue"){
+                $(pic_id).css('filter', 'invert(21%) sepia(84%) saturate(1462%) hue-rotate(215deg) brightness(101%) contrast(86%)')
+                }
+                if(color == "Red"){
+                $(pic_id).css('filter', 'invert(39%) sepia(89%) saturate(1165%) hue-rotate(340deg) brightness(84%) contrast(105%)')
+                }
+                if(color == "Yellow"){
+                $(pic_id).css('filter', 'invert(87%) sepia(21%) saturate(6975%) hue-rotate(7deg) brightness(98%) contrast(105%)')
+            }
+        }
             
             /*change main animal pic*/
             AnimalPic("main_pic_aniaml",resultArray[0])
@@ -141,9 +168,16 @@
 
             /*Traits of color*/
             document.getElementById('trait_color').innerHTML = "Traits of " + resultArray[1];
+        
 
+            //main animal filter
+            ColorFliter('.main_pic_aniaml', resultArray[1]);
            
+            //bestie animal filter
+            ColorFliter('.sub_img_aniaml_best', resultArray[3]);
 
+            //worst animal filter
+            ColorFliter('.sub_img_aniaml_worst', resultArray[5]);
 
         </script>
     </body>
