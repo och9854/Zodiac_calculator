@@ -47,7 +47,7 @@
                 <div id = 'bestie_name'>Yellow Cow</div>
                 <br>
                 <div class = sub_img_circle_1> <img src="zodiac_pic_noback/backcircle.png" width = '300'> </div>
-                <div class = sub_img_aniaml_best> <img  id = "sub_pic_aniaml_best" src="zodiac_pic_noback/horse.png" width = '300'>  </div>
+                <div class = sub_img_aniaml_best> <img onclick="moveToBestie();" id = "sub_pic_aniaml_best" src="zodiac_pic_noback/horse.png" width = '300'>  </div>
             </div>
 
             <div class = worst>
@@ -58,7 +58,7 @@
                 <div id = 'worst_name'>Yellow Cow</div>
                 <br>
                 <div class = sub_img_circle_2> <img src="zodiac_pic_noback/backcircle.png" width = '300'> </div>
-                <div class = sub_img_aniaml_worst> <img id = 'sub_pic_aniaml_worst' src="zodiac_pic_noback/snake.png" width = '300'>  </div>
+                <div class = sub_img_aniaml_worst> <img onclick="moveToWorst();" id = 'sub_pic_aniaml_worst' src="zodiac_pic_noback/snake.png" width = '300'>  </div>
             </div>
         
 
@@ -71,7 +71,7 @@
 
         <script>
             // the javascript array resultArray is now in Page 2 as const [animal, color, bestAnimal, bestColor, worstAnimal, worstColor];
-            resultArray = JSON.parse(sessionStorage.getItem("resultArray"));
+            const resultArray = JSON.parse(sessionStorage.getItem("resultArray"));
 
             // var resultArray = ["Cow", "Red", "Horse", "Red", "Rabbit", "White"];
             // document.write(resultArray[0]);
@@ -180,6 +180,83 @@
             ColorFliter('.sub_img_aniaml_worst', resultArray[5]);
         
 
+
+
+        const animalList = ["Sheep", "Monkey", "Rooster", "Dog", "Pig", "Rat",  "Cow", "Tiger", "Rabbit", "Dragon", "Snake", "Horse"];
+        const colorList = ["White","White", "Black","Black", "Blue","Blue", "Red","Red", "Yellow", "Yellow"];
+
+        var animal_ = resultArray[0];
+        var color_ =  resultArray[1];
+
+        //// best animal and best color
+        var bestAnimal_ = resultArray[2];
+        var bestColor_  = resultArray[3];
+        
+        //// worst animal and worst color
+        var worstAnimal_ = resultArray[4];
+        var worstColor_  = resultArray[5];
+
+        function moveToBestie() {
+            
+            var animal_idx = animalList.indexOf(bestAnimal_);
+            var color_idx = colorList.indexOf(bestColor_);
+            // console.log(`${animal_idx}, ${color_idx}`);
+
+            //// animal and color by itself
+            var animal = animalList[animal_idx];
+            var color =  colorList[color_idx];
+            // console.log(`${animal}, ${color}`);
+
+            //// best animal and best color
+            var bestAnimal = animalList[11 - animal_idx];
+            var bestColor  = colorList[ (color_idx + 2) % 10];
+            // console.log(`${bestAnimal}, ${bestColor}`);
+            
+            //// worst animal and worst color
+            var worstAnimal = animalList[ (animal_idx + 6) % 12];
+            var worstColor  = colorList[ (color_idx + 4) % 10];
+            // console.log(`${worstAnimal}, ${worstColor}`);
+            
+            const resultArray = [animal, color, bestAnimal, bestColor, worstAnimal, worstColor];
+            console.log(resultArray);
+            sessionStorage.setItem("resultArray", JSON.stringify(resultArray));
+            // JSON.stringify(resultArray) converts the resultArray into a string which can be stored in sessionStorage
+
+            window.open("result_page_demo.html", "_self");
+
+        }
+
+        function moveToWorst() {
+
+            
+            // Calculate animal and color
+            
+            const animal_idx = animalList.indexOf(worstAnimal_);
+            const color_idx = colorList.indexOf(worstColor_);
+            // console.log(`${animal_idx}, ${color_idx}`);
+
+            //// animal and color by itself
+            var animal = animalList[animal_idx];
+            var color =  colorList[color_idx];
+            // console.log(`${animal}, ${color}`);
+
+            //// best animal and best color
+            var bestAnimal = animalList[11 - animal_idx];
+            var bestColor  = colorList[ (color_idx + 2) % 10];
+            // console.log(`${bestAnimal}, ${bestColor}`);
+            
+            //// worst animal and worst color
+            var worstAnimal = animalList[ (animal_idx + 6) % 12];
+            var worstColor  = colorList[ (color_idx + 4) % 10];
+            // console.log(`${worstAnimal}, ${worstColor}`);
+            
+            const resultArray = [animal, color, bestAnimal, bestColor, worstAnimal, worstColor];
+            console.log(resultArray);
+            sessionStorage.setItem("resultArray", JSON.stringify(resultArray));
+            // JSON.stringify(resultArray) converts the resultArray into a string which can be stored in sessionStorage
+
+            window.open("result_page_demo.html", "_self");
+        }
 
         </script>
     </body>
