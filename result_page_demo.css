@@ -91,6 +91,7 @@ h3{
     /* border: dotted */
     object-fit: scale-down;
     /* text-align: center; */
+    /* position: relative; */
 
 
 
@@ -126,6 +127,7 @@ h3{
     /* border: solid; */
     /* margin: auto; */
     float : left;
+    position: relative;
     
 }
 
@@ -139,9 +141,10 @@ h3{
 
     /* width: 20%; */
     /* height: 20%; */
-    object-fit: scale-down;
+    /* object-fit: scale-down; */
     /* text-align: center; */
     /* margin: auto; */
+    position: relative;
 
 
 }
@@ -149,27 +152,33 @@ h3{
 
 .sub_img_circle_1{
     position:absolute;
+    /* position:relative; */
+
     /* text-align: center; */
     /* margin: auto; */
     /* top: 90%;*/
-    left: 17.5%;
-
+    left: 50%;
+    transform: translate(-50%, -2%);
+    /* right: 50%; */
 
 }
 
 .sub_img_circle_2{
     position:absolute;
+    /* position:relative; */
+
     /* text-align: center; */
     /* margin: auto; */
     /* top: 90%;*/
-    right: 17.5%;
+    right: 50%;
+    transform: translate(50%, -2%);
+    
 
 
 }
 
 
 .sub_img_aniaml_best{
-
     /*-------change color--------*/
 
     /*default : black*/
