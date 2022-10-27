@@ -183,34 +183,34 @@
 
         const color_TraitsList = [
                 // white
-                "● Strong tone, cold, cold temperament can cause problems<br><br>● You tend to act ahead of words<br><br>● Perfectionist inclination"
+                "● Perfectionist inclination<br><br>● You tend to act ahead of words<br><br>● Strong tone, cold, cold temperament can cause problems"
                 ,
                 // white
-                "● Strong tone, cold, cold temperament can cause problems<br><br>● You tend to act ahead of words<br><br>● Perfectionist inclination"
+                "● Perfectionist inclination<br><br>● You tend to act ahead of words<br><br>● Strong tone, cold, cold temperament can cause problems"
                 ,
                 // black
-                "● You tend to adapt well to the organization, but you get a lot of invisible stress<br><br>● Take good care of your relationships so that you don\'t get overwhelmed by loneliness or depression<br><br>● Highly adaptable to situations and environments with flexibility and flexibility"
+                "● Highly adaptable to situations and environments with flexibility and flexibility<br><br>● You tend to adapt well to the organization, but you get a lot of invisible stress<br><br>● Take good care of your relationships so that you don\'t get overwhelmed by loneliness or depression"
                 ,
                 // black
-                "● You tend to adapt well to the organization, but you get a lot of invisible stress<br><br>● Take good care of your relationships so that you don\'t get overwhelmed by loneliness or depression<br><br>● Highly adaptable to situations and environments with flexibility and flexibility"
+                "● Highly adaptable to situations and environments with flexibility and flexibility<br><br>● You tend to adapt well to the organization, but you get a lot of invisible stress<br><br>● Take good care of your relationships so that you don\'t get overwhelmed by loneliness or depression"
                 ,
                 // blue
-                "● You are often frustrated because you have too much enthusiasm or enthusiasm and have a lot of open work<br><br>● You start well, but you lack perseverance<br><br>● You are kind and comfortable"
+                "● You are kind and comfortable<br><br>● You start well, but you lack perseverance<br><br>● You are often frustrated because you have too much enthusiasm or enthusiasm and have a lot of open work"
                 ,
                  // blue
-                 "● You are often frustrated because you have too much enthusiasm or enthusiasm and have a lot of open work<br><br>● You start well, but you lack perseverance<br><br>● You are kind and comfortable"
+                 "● You are kind and comfortable<br><br>● You start well, but you lack perseverance<br><br>● You are often frustrated because you have too much enthusiasm or enthusiasm and have a lot of open work"
                 ,
                 // red
-                "● You have to be careful because there are times when things go wrong due to your urgent personality and capriciousness<br><br>● You prefer the obvious and the definite and you dislike the vague<br><br>● Be popular for one\'s polite and cheerful personality"
+                "● Be popular for one\'s polite and cheerful personality<br><br>● You prefer the obvious and the definite and you dislike the vague<br><br>● You have to be careful because there are times when things go wrong due to your urgent personality and capriciousness"
                 ,
                 // red
-                "● You have to be careful because there are times when things go wrong due to your urgent personality and capriciousness<br><br>● You prefer the obvious and the definite and you dislike the vague<br><br>● Be popular for one\'s polite and cheerful personality"
-                ,
-                 // gold
-                 "● You should go outside and meet people, not just stay at home<br><br>● Reliable, responsible, and honest<br><br>● Full of creativity<br><br>"
+                "● Be popular for one\'s polite and cheerful personality<br><br>● You prefer the obvious and the definite and you dislike the vague<br><br>● You have to be careful because there are times when things go wrong due to your urgent personality and capriciousness"
                 ,
                 // gold
-                "● You should go outside and meet people, not just stay at home<br><br>● Reliable, responsible, and honest<br><br>● Full of creativity<br><br>"
+                "● Full of creativity<br><br>● Reliable, responsible, and honest<br><br>● You should go outside and meet people, not just stay at home"
+                ,
+                // gold
+                "● Full of creativity<br><br>● Reliable, responsible, and honest<br><br>● You should go outside and meet people, not just stay at home"
             ];
 
             const animal_TraitsList = [
@@ -282,8 +282,12 @@
             var worstAnimal = animalList[ (animal_idx + 6) % 12];
             var worstColor  = colorList[ (color_idx + 4) % 10];
             // console.log(`${worstAnimal}, ${worstColor}`);
+
+            // Traits of color&animal
+            var colorTrait = color_TraitsList[color_idx];
+            var animalTrait = animal_TraitsList[animal_idx];
             
-            const resultArray = [animal, color, bestAnimal, bestColor, worstAnimal, worstColor];
+            const resultArray = [animal, color, bestAnimal, bestColor, worstAnimal, worstColor, colorTrait, animalTrait];
             console.log(resultArray);
             sessionStorage.setItem("resultArray", JSON.stringify(resultArray));
             // JSON.stringify(resultArray) converts the resultArray into a string which can be stored in sessionStorage
@@ -315,8 +319,12 @@
             var worstAnimal = animalList[ (animal_idx + 6) % 12];
             var worstColor  = colorList[ (color_idx + 4) % 10];
             // console.log(`${worstAnimal}, ${worstColor}`);
+
+            // Traits of color&animal
+            var colorTrait = color_TraitsList[color_idx];
+            var animalTrait = animal_TraitsList[animal_idx];
             
-            const resultArray = [animal, color, bestAnimal, bestColor, worstAnimal, worstColor];
+            const resultArray = [animal, color, bestAnimal, bestColor, worstAnimal, worstColor, colorTrait, animalTrait];
             console.log(resultArray);
             sessionStorage.setItem("resultArray", JSON.stringify(resultArray));
             // JSON.stringify(resultArray) converts the resultArray into a string which can be stored in sessionStorage
