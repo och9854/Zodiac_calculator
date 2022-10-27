@@ -20,22 +20,17 @@
                     <div id = 'trait_color'>Traits of Yellow</div>
                 </h3>
                 <br>
-                yellowyellowyellowyellowyellowy ellowyellowyellow
-                yellowyellowyellowyell owyellowyellowyellowyellow
-                dfssfsdafsafsaffsafsfa sfsafasfddddddddddddddddddd
-                dfssfsdafsafsaffsafs fasfsafasfddddddddddddddddddd
-
+                <br>
+                    <div id = 'trait_expalin_of_color'>trait_expalin_of_color</div>
             </div>
-        
+            <br>
             <div class = "zodiac_explain"> 
                 <h3>
                     <div id = "trait_animal">Traits of Cow</div>
                 </h3>
                 <br>
-                CowCowCowCowCowCowCowCowCowCow CowCowCowCowCowCowCow
-                CowCowCowCowCowCowCowCowCowCow CowCowCowCowCowCowCow
-                CowCowCowCowCowCowCowCowCowCow CowCowCowCowCowCowCow
-                CowCowCowCowCowCowCowCowCowCow CowCowCowCowCowCowCow
+                <br>
+                <div id = "trait_expalin_of_animal">trait_expalin_of_animal</div>
             </div>
             
 
@@ -169,6 +164,10 @@
             /*Traits of color*/
             document.getElementById('trait_color').innerHTML = "Traits of " + resultArray[1];
         
+            /*trait_expalin_of_color*/
+            document.getElementById('trait_expalin_of_color').innerHTML = resultArray[6];
+            /*trait_expalin_of_animal*/
+            document.getElementById('trait_expalin_of_animal').innerHTML = resultArray[7];
 
             //main animal filter
             ColorFliter('.main_pic_aniaml', resultArray[1]);
@@ -178,12 +177,79 @@
 
             //worst animal filter
             ColorFliter('.sub_img_aniaml_worst', resultArray[5]);
-        
-
-
 
         const animalList = ["Sheep", "Monkey", "Rooster", "Dog", "Pig", "Rat",  "Cow", "Tiger", "Rabbit", "Dragon", "Snake", "Horse"];
         const colorList = ["White","White", "Black","Black", "Blue","Blue", "Red","Red", "Yellow", "Yellow"];
+
+        const color_TraitsList = [
+                // white
+                "● Strong tone, cold, cold temperament can cause problems<br><br>● You tend to act ahead of words<br><br>● Perfectionist inclination"
+                ,
+                // white
+                "● Strong tone, cold, cold temperament can cause problems<br><br>● You tend to act ahead of words<br><br>● Perfectionist inclination"
+                ,
+                // black
+                "● You tend to adapt well to the organization, but you get a lot of invisible stress<br><br>● Take good care of your relationships so that you don\'t get overwhelmed by loneliness or depression<br><br>● Highly adaptable to situations and environments with flexibility and flexibility"
+                ,
+                // black
+                "● You tend to adapt well to the organization, but you get a lot of invisible stress<br><br>● Take good care of your relationships so that you don\'t get overwhelmed by loneliness or depression<br><br>● Highly adaptable to situations and environments with flexibility and flexibility"
+                ,
+                // blue
+                "● You are often frustrated because you have too much enthusiasm or enthusiasm and have a lot of open work<br><br>● You start well, but you lack perseverance<br><br>● You are kind and comfortable"
+                ,
+                 // blue
+                 "● You are often frustrated because you have too much enthusiasm or enthusiasm and have a lot of open work<br><br>● You start well, but you lack perseverance<br><br>● You are kind and comfortable"
+                ,
+                // red
+                "● You have to be careful because there are times when things go wrong due to your urgent personality and capriciousness<br><br>● You prefer the obvious and the definite and you dislike the vague<br><br>● Be popular for one\'s polite and cheerful personality"
+                ,
+                // red
+                "● You have to be careful because there are times when things go wrong due to your urgent personality and capriciousness<br><br>● You prefer the obvious and the definite and you dislike the vague<br><br>● Be popular for one\'s polite and cheerful personality"
+                ,
+                 // gold
+                 "● You should go outside and meet people, not just stay at home<br><br>● Reliable, responsible, and honest<br><br>● Full of creativity<br><br>"
+                ,
+                // gold
+                "● You should go outside and meet people, not just stay at home<br><br>● Reliable, responsible, and honest<br><br>● Full of creativity<br><br>"
+            ];
+
+            const animal_TraitsList = [
+                // sheep
+                "● You never give up what you\'re determined to do, you\'re stubborn and you have a lot of pride<br><br>● Pacifist, Hate fighting, Polite<br><br>● Thoughtful and compassionate"
+                ,
+                // monkey
+                "● You are independent and can\'t refuse others\'requests, so you step up to the work of others<br><br>● A tendency to be creative and quick-witted but not to finish things well<br><br>● You can do something wrong if you only believe in your skills"
+                ,
+                // chiken
+                "● A tendency to give up difficult tasks easily even though they are understanding and judgmental<br><br>● An upright character with accuracy, systematic, and determination<br><br>● Hard to show one\'s true colors"
+                ,
+                // dog
+                "● The tendency of a once-established relationship to go to the end because of its tenacity and loyalty<br><br>● Passive and indecisive<br><br>● Intelligent and frank"
+                ,
+                // pig
+                "● It symbolizes wealth and good fortune, but beware of laziness<br><br>● Active, loyal, honest and sociable in everything<br><br>● A tendency to be honest and calm but simple"
+                ,
+                // mouse
+                "● Goes well with everything with sociality, honesty and sincerity<br><br>● Highly adaptable and witty<br><br>● Having strong patient"
+                ,
+                // cow
+                "● You are usually gentle and gentle, but once you get angry, you are scared<br><br>● Good discipline, good personality, good listener<br><br>● A man of few words and great patience"
+                ,
+                // tiger
+                "● Full of challenging spirit (active tendencies)<br><br>● Aversion to restraint and control<br><br>● A romanticist"
+                ,
+                // rabbit
+                "● A tendency to be unable to do other things when one thing is lost<br><br>● The condition of having many excellent people in everything<br><br>● Gentle and good-natured"
+                ,
+                // dragon
+                "● The state of being hard-nosed and determined but not tactful or manipulative<br><br>● Self-respecting and loathing to lose<br><br>● A sensitive personality"
+                ,
+                // snake
+                "● Quick to judge situations and logical<br><br>● Thoughtful and humorous towards others<br><br>● A strong sense of responsibility"
+                ,
+                // horse
+                "● Tendency to lose by being strong-willed and effective, but taking the initiative first<br><br>● Lively and popular<br><br>● Quick-witted"
+            ];
 
         var animal_ = resultArray[0];
         var color_ =  resultArray[1];
