@@ -63,6 +63,8 @@ h3{
     /* margin-right: auto; */
     /* text-align: center; */
     /* float: left; */
+
+
     
 
     /*-------change color--------*/
@@ -230,4 +232,30 @@ footer{
     padding:0.5%;
     text-align: center;
     /* align-items : center; */
+}
+
+
+.snapchat-creative-kit-share{
+    position:relative;
+    float : right;
+    border : solid;
+    width : 5%;
+    height: 5%;
+    object-fit: fill;
+    text-align: center;
+
+}
+
+.fb-share-button{
+    position:relative;
+    border : solid;
+    float : right;
+    width : 5%;
+    height: 5%;
+    object-fit: fill;
+    text-align: center;
+
+
+
+    
 }
