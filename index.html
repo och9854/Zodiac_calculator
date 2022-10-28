@@ -51,16 +51,24 @@
         input.addEventListener("keypress", function(event) {
             // If the user presses the "Enter" key on the keyboard
             if (event.key == "Enter") {
+                if($('#input').val()==''){
+                    alert("Enter the input");
+                }
                 // Trigger the button element with a click
-                document.getElementById("Enter").click();
+                else document.getElementById("Enter").click();
             }
         });
 
         // get values and open new tab when Enter btn is clicked
         var enter = document.getElementById("Enter");
         enter.addEventListener("click", function(){
-            counter();
-            openCompiler();
+            if($('#input').val()==''){
+                    alert("Enter the input");
+                }
+            else {
+                counter();
+                openCompiler();
+            }
         });
         
 
