@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <!--count total visitor-->
+    <!-- count total visitor
     <script language="JavaScript">  
         expireDate = new Date  // 현재의 날짜 객체를 생성 
         expireDate.setMonth(expireDate.getMonth()+3)  // 현재 월에 3개월을 더함. 쿠키의 유효기간 설정.(현재~3개월) 
@@ -39,7 +39,7 @@
          }   
          return 0   
         }   
-    </script>     
+    </script>      -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script>
@@ -189,8 +189,13 @@
     <footer>
         Copyright By Team <strong>BABO</strong>
         <br>
-        <script language="javascript" type="text/javascript">  
-        document.write("Total : <font color=yellow>" + hitCt + "</font>") 
+        <div id="visits"> N people visited </div>
+        <script>
+            function cb(response) {
+                var visited_num = response.value;
+                document.getElementById('visits').innerText = visited_num + ' people visited!';
+            }
         </script>
+        <script async src="https://api.countapi.xyz/hit/zodiacjake.netlify.app/visits?callback=cb"></script>
     </footer>
 </html>
